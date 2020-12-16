@@ -1,0 +1,20 @@
+syntax = "proto3";
+package user.api.v1;
+option java_multiple_files = true;
+option java_package = "com.project.user.api";
+option objc_class_prefix = "ProjectUserApi";
+
+
+service User {
+  rpc GetUser(GetUserArgs) returns (GetUserResp) ;
+}
+
+message GetUserArgs {
+  uint64 user_id=1;
+}
+
+message GetUserResp {
+  uint64 user_id=1;
+  string user_name=2;
+}
+
